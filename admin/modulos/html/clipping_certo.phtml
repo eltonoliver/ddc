@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="iso-8859-2">
+<title>Clipping</title>
+</head>
+
+<body>
+
+<?php 
+
+$meses = array(
+	'1' 	=> 'Janeiro',
+	'2' 	=> 'Fevereiro',
+	'3' 	=> 'Março',
+	'4' 	=> 'Abril',
+	'5' 	=> 'Maio',
+	'6' 	=> 'Junho',
+	'7' 	=> 'Julho',
+	'8' 	=> 'Agosto',
+	'9' 	=> 'Setembro',
+	'10' 	=> 'Outubro',
+	'11' 	=> 'Novembro',
+	'12' 	=> 'Dezembro'
+);
+$d = date('d', strtotime($envio[0]['dtDataCadastro']));
+$m = (int)date('m', strtotime($envio[0]['dtDataCadastro']));
+$a = date('Y', strtotime($envio[0]['dtDataCadastro']));
+$dataToda = 'Manaus, '.$d.' de '.$meses[$m].' de '.$a;
+
+$noticias = array();
+$videos = array();
+$imagens = array();
+$audios = array();
+foreach($envio as $e){
+	switch($e['idTipoConteudo']){
+		case '11':
+			$noticias[]=$e;
+		break;
+		case '12':
+			$videos[]=$e;
+		break;
+		case '13':
+			$imagens[]=$e;
+		break;
+		case '19':
+			$audios[]=$e;
+		break;
+		default:
+		break;
+	}
+}
+
+?>
+
+<table border="0"  cellspacing="0" cellpadding="0" width="650px" 
+style="
+margin: 0 auto; padding: 25px; font-family:Verdana, Geneva, sans-serif;
+background-image:url(<?php echo $url_raiz; ?>img/clipping/fh_adriano_jorge_bg_clipping.png);
+">
+
+<!--Topo-->
+<thead>
+	<tr width="600">
+		<td height="99" colspan="2">
+			<img src="<?php echo $url_raiz; ?>img/clipping/fh_adriano_jorge_logo_clipping.png" style="margin-bottom: -10px;;" />
+		</td>
+	</tr>	
+	<tr width="600">
+		<td background="<?php echo $url_raiz; ?>img/clipping/fh_adriano_jorge_bg_email.png" height="38" width="280" style="width: 280px;">
+			<p style="margin:0; padding:0; padding-left: 20px; text-align: left; font-size: 13px; color: #fff; font-weight: bold;">
+				Clipping n&ordm; <?php printf('%04d', $envio[0]['numeroEnvio']);?>/<?php echo $a; ?>
+		  </p>
+		</td>
+		<td background="<?php echo $url_raiz; ?>img/clipping/fh_adriano_jorge_bg_email.png" height="38" width="280" style="width: 280px;">
+			<p style="margin:0; padding:0; padding-right: 20px; text-align:right; font-size: 13px; color: #fff; font-weight: bold;">
+				<?php echo $dataToda; ?>
+		  </p>
+		</td>
+	</tr>
+</thead>
+<!--/Topo-->
+
+
+<!--Conteudo-->
+<tbody width="600" bgcolor="#fff" style="background:#fff;">
+<?php if($noticias): ?>
+<!--Noticias-->
+	<tr>
+		<td width="280" style="padding: 20px 10px 10px 20px;" valign="top">
+			<h4 style="margin: 0; padding:0; padding-bottom: 20px; font-size:28px; color: #1a5cad; font-weight:normal;">
+				Not&iacute;cias
+			</h4>
+            <?php 
+			if(vazio($noticias[0]['nmLinkImagem'])){ 
+				$imgDestaque = $url_raiz.'img/'.($noticias[0]['nmLinkImagem'] = 'imDestaquePadrao.jpg');
+			} else {
+				$imgDestaque = $url_raiz.'arquivos/enviados/image/'.$noticias[0]['nmLinkImagem'];	
+			}
+			?>
+			<img src="<?php echo $imgDestaque;?>" style="width: 100%;"/>
+            <br style="clear:both;"><br style="clear:both;">
+            <h6 style="margin: 0; padding:0; padding-bottom: 20px; font-size:16px; font-weight: bold;">
+				<?php echo $noticias[0]['nmTituloConteudo']; ?>
+			</h6>
+			<p style="margin: 0; padding:0; font-size: 14px; text-align:justify;">
+				<?php echo $noticias[0]['nmResumo']; ?> <a href="<?php echo $url_raiz;?>detalhar/id/<?php echo $noticias[0]['idConteudo']; ?>" target="_blank" style="color: #393; text-decoration:none;">Veja mais...</a>
+			</p>
+		</td>
+<!--COLUNA-->
+	  <td  style="padding: 20px 20px 0 10px;" valign="top">
+        <?php unset($noticias[0]);if($noticias): ?>
+			<h5 style="margin: 0; padding:0; padding-bottom: 20px; font-size:20px; color: #1a5cad; font-weight:normal;">
+				Outras Not&iacute;cias
+			</h5>
+		<?php foreach($noticias as $n): ?>
+				<h6 style="margin: 0; padding:0; font-size:15px; font-weight: bold;">
+					<?php echo $n['nmTituloConteudo']; ?>
+				</h6>
+				<p style="margin: 0; padding:0; padding-bottom: 20px; font-size: 13px; text-align:justify;">
+					<?php echo resume($n['nmResumo'], 100); ?> <a href="<?php echo $url_raiz;?>detalhar/id/<?php echo $n['idConteudo']; ?>" style="color: #393; text-decoration:none;">Veja mais...</a>
+				</p>
+		<?php endforeach; ?>
+		<?php endif; ?>
+		</td>
+	</tr>		
+<!--COLUNA-->
+<!--/Noticias-->
+<?php endif; ?>
+
+
+<?php if($videos): ?>
+	<tr>
+		<td colspan="2">
+			<hr style="margin: 0; padding:0; border: none; border-bottom: 1px dashed #4b5e65;">
+		</td>
+	</tr>
+
+<!--Audios-->
+	<tr>
+		<td width="280" style="padding: 20px 10px 10px 20px;" valign="top">
+        <?php 
+			if(vazio($videos[0]['nmLinkImagem'])){ 
+				$imgDestaque = $url_raiz.'img/'.($videos[0]['nmLinkImagem'] = 'imDestaquePadrao.jpg');
+			} else {
+				$imgDestaque = $url_raiz.'arquivos/enviados/image/'.$videos[0]['nmLinkImagem'];	
+			}
+		?>
+			<h4 style="margin: 0; padding:0; padding-bottom: 20px; font-size:28px; color: #1a5cad; font-weight:normal;">
+				V&iacute;deos
+			</h4>
+			<!--<img src="<?php echo $imgDestaque; ?>" style="width: 100%;"/>-->
+            
+            <h6 style="margin: 0; padding:0; padding-bottom: 20px; font-size:16px; font-weight: bold;">
+				<?php echo $videos[0]['nmTituloConteudo']; ?>
+			</h6>
+			<p style="margin: 0; padding:0; font-size: 14px; text-align:justify;">
+				<?php echo $videos[0]['nmResumo']; ?>  <a href="<?php echo $url_raiz;?>detalhar-video/id/<?php echo $videos[0]['idConteudo']; ?>" target="_blank" style="color: #393; text-decoration:none;">Veja mais...</a>
+			</p>
+		</td>
+		
+<!--COLUNA-->
+
+		<td  style="padding: 20px 20px 0 10px;" valign="top">
+        <?php unset($videos[0]);if($videos): ?>
+			<h5 style="margin: 0; padding:0; padding-bottom: 20px; font-size:20px; color: #1a5cad; font-weight:normal;">
+				Outros V&iacute;deos
+			</h5>
+		<?php foreach($videos as $n): ?>
+				<h6 style="margin: 0; padding:0; font-size:15px; font-weight: bold;">
+					<?php echo $n['nmTituloConteudo']; ?>
+				</h6>
+				<p style="margin: 0; padding:0; padding-bottom: 20px; font-size: 13px; text-align:justify;">
+					<?php echo resume($n['nmResumo'], 100); ?> <a href="<?php echo $url_raiz;?>detalhar-video/id/<?php echo $n['idConteudo']; ?>" target="_blank" style="color: #393; text-decoration:none;">Veja mais...</a>
+				</p>
+		<?php endforeach; ?>
+		<?php endif; ?>
+		</td>
+	</tr>	
+<!--COLUNA-->
+<!--/Audios-->
+<?php endif; ?>
+
+<?php if($audios): ?>
+<tr>
+		<td colspan="2">
+			<hr style="margin: 0; padding:0; border: none; border-bottom: 1px dashed #4b5e65;">
+		</td>
+	</tr>
+
+<!--Videos-->
+	<tr>
+		<td width="280" style="padding: 20px 10px 10px 20px;" valign="top">
+        <?php 
+			if(vazio($audios[0]['nmLinkImagem'])){ 
+				$imgDestaque = $url_raiz.'img/'.($audios[0]['nmLinkImagem'] = 'imDestaquePadrao.jpg');
+			} else {
+				$imgDestaque = $url_raiz.'arquivos/enviados/image/'.$audios[0]['nmLinkImagem'];	
+			}
+		?>
+			<h4 style="margin: 0; padding:0; padding-bottom: 20px; font-size:28px; color: #1a5cad; font-weight:normal;">
+				&Aacute;udios
+			</h4>
+			<!--<img src="<?php echo $imgDestaque; ?>" style="width: 100%;"/>-->
+            <h6 style="margin: 0; padding:0; padding-bottom: 20px; font-size:16px; font-weight: bold;">
+				<?php echo $audios[0]['nmTituloConteudo']; ?>
+			</h6>
+			<p style="margin: 0; padding:0; font-size: 14px; text-align:justify;">
+				<?php echo $audios[0]['nmResumo']; ?> <a href="<?php echo $url_raiz;?>detalhar-audio/id/<?php echo $audios[0]['idConteudo']; ?>" target="_blank" style="color: #393; text-decoration:none;">Veja mais...</a>
+			</p>
+		</td>
+		
+<!--COLUNA-->
+
+		<td  style="padding: 20px 20px 0 10px;" valign="top">
+        <?php unset($audios[0]);if($audios): ?>
+			<h5 style="margin: 0; padding:0; padding-bottom: 20px; font-size:20px; color: #1a5cad; font-weight:normal;">
+				Outros &Aacute;udios
+			</h5>
+		<?php foreach($audios as $n): ?>
+				<h6 style="margin: 0; padding:0; font-size:15px; font-weight: bold;">
+					<?php echo $n['nmTituloConteudo']; ?>
+				</h6>
+				<p style="margin: 0; padding:0; padding-bottom: 20px; font-size: 13px; text-align:justify;">
+					<?php echo resume($n['nmResumo'], 100); ?> <a href="<?php echo $url_raiz;?>detalhar-audio/id/<?php echo $n['idConteudo']; ?>" target="_blank" style="color: #393; text-decoration:none;">Veja mais...</a>
+				</p>
+		<?php endforeach; ?>
+		<?php endif; ?>
+		</td>
+	</tr>
+<!--COLUNA-->
+<!--/Videos-->
+<?php endif; ?>
+
+
+
+<?php if($imagens): ?>
+<tr>
+		<td colspan="2">
+			<hr style="margin: 0; padding:0; border: none; border-bottom: 1px dashed #4b5e65;">
+		</td>
+	</tr>
+
+<!--Videos-->
+	<tr>
+		<td width="280" style="padding: 20px 10px 10px 20px;" valign="top">
+        <?php 
+			if(vazio($imagens[0]['nmLinkImagem'])){ 
+				$imgDestaque = $url_raiz.'img/'.($imagens[0]['nmLinkImagem'] = 'imDestaquePadrao.jpg');
+			} else {
+				$imgDestaque = $url_raiz.'arquivos/enviados/image/'.$imagens[0]['nmLinkImagem'];	
+			}
+		?>
+			<h4 style="margin: 0; padding:0; padding-bottom: 20px; font-size:28px; color: #1a5cad; font-weight:normal;">
+				Galeria
+			</h4>
+			<img src="<?php echo $imgDestaque; ?>" style="width: 100%;"/>
+            <br style="clear:both;"><br style="clear:both;">
+            <h6 style="margin: 0; padding:0; padding-bottom: 20px; font-size:16px; font-weight: bold;">
+				<?php echo $imagens[0]['nmTituloConteudo']; ?>
+			</h6>
+			<p style="margin: 0; padding:0; font-size: 14px; text-align:justify;">
+				<?php echo $imagens[0]['nmResumo']; ?> <a href="<?php echo $url_raiz;?>galeria-de-imagens/id/<?php echo $imagens[0]['idConteudo']; ?>" target="_blank" style="color: #393; text-decoration:none;">Veja mais...</a>
+			</p>
+		</td>
+		
+<!--COLUNA-->
+
+		<td  style="padding: 20px 20px 0 10px;" valign="top">
+        <?php unset($imagens[0]);if($imagens): ?>
+			<h5 style="margin: 0; padding:0; padding-bottom: 20px; font-size:20px; color: #1a5cad; font-weight:normal;">
+				Outras Imagens
+			</h5>
+		<?php foreach($imagens as $n): ?>
+        <?php 
+			if(vazio($n['nmLinkImagem'])){ 
+				$imgDestaque = $url_raiz.'img/'.'imDestaquePadrao.jpg';
+			} else {
+				$imgDestaque = $url_raiz.'arquivos/enviados/image/'.$n['nmLinkImagem'];	
+			}
+		?>
+        		<img src="<?php echo $imgDestaque; ?>" style="width: 80px;" style="float:left;"/>
+				<h6 style="margin: 0; padding:0; font-size:15px; font-weight: bold;">
+					<?php echo $n['nmTituloConteudo']; ?>
+				</h6>
+				<p style="margin: 0; padding:0; padding-bottom: 20px; font-size: 13px; text-align:justify;">
+                
+					<?php echo resume($n['nmResumo'], 100); ?> <a href="<?php echo $url_raiz;?>galeria-de-imagens/id/<?php echo $n['idConteudo']; ?>" target="_blank" style="color: #393; text-decoration:none;">Veja mais...</a>
+				</p>
+		<?php endforeach; ?>
+		<?php endif; ?>
+		</td>
+	</tr>
+<!--COLUNA-->
+<!--/Videos-->
+<?php endif; ?>
+</tbody>
+<!--/Conteudo-->
+
+<tfoot>
+	<tr>
+		<td colspan="2" height="73" background="<?php echo $url_raiz; ?>img/clipping/fh_adriano_jorge_bg_email_3.png" align="center">
+			<a href=""<?php echo $url_raiz; ?>" style="color: #fff; font-size: 14px; font-weight: bold; text-decoration:none;">Acesse o site: http://www.fhaj.am.gov.br</a>
+		</td>
+	</tr>
+</tfoot>
+</table>
+</body>
+</html>

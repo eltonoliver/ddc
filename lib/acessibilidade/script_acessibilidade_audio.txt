@@ -1,0 +1,44 @@
+<li class=3D"sound">
+            <?
+			$paginas = "http://".$_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"];
+			if($_SERVER["QUERY_STRING"]!= ""){
+				$paginas.= "?".$_SERVER["QUERY_STRING"];
+			}
+			$arquivo= $_SERVER["PHP_SELF"];
+			$codificada= urlencode($paginas);
+			$codificada2= urlencode($paginas);
+			echo"
+            <object classid=3D'clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' =
+codebase=3D'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash=
+.cab#version=3D6,0,29,0' width=3D'260' height=3D'20'>
+                <param name=3D'movie' value=3D'img/dewplayer.swf?son=3Dhttp=
+%3A%2F%2Fapp.readspeaker.com%2Fcgi-bin%2Frsent%3Fcustomerid%3D19%26lang%3Dp=
+t_br%26voice%3Draquel%26url%3D$codificada2'>
+                <param name=3D'quality' value=3D'high'><param name=3D'SCALE=
+' value=3D'exactfit'>
+                <param name=3D'wmode' value=3D'transparent'>
+                <embed wmode=3D'transparent' src=3D'img/dewplayer.swf?son=
+=3Dhttp%3A%2F%2Fapp.readspeaker.com%2Fcgi-bin%2Frsent%3Fcustomerid%3D19%26l=
+ang%3Dpt_br%26voice%3Draquel%26url%3D$codificada2' quality=3D'high' plugins=
+page=3D'http://www.macromedia.com/go/getflashplayer' type=3D'application/x-=
+shockwave-flash' scale=3D'exactfit' width=3D'260' height=3D'20'>
+                </embed>=09
+            </object>
+            ";?>
+        </li>
+
+
+
+<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0' height='18' width='200'>
+
+<param name='movie' value='http://www.seplan.am.gov.br/img/dewplayer.swf?son=http%3A%2F%2Fapp.readspeaker.com%2Fcgi-bin%2Frsent%3Fcustomerid%3D19%26lang%3Dpt_br%26voice%3Draquel%26url%3Dhttp%3A%2F%2Fwww.seplan.am.gov.br%2Fnoticia.php%3Fcod%3D477'>
+
+<param name='quality' value='high'><param name='SCALE' value='exactfit'>
+
+<param name='wmode' value='transparent'>
+
+<embed wmode='transparent' src='http://www.seplan.am.gov.br/img/dewplayer.swf?son=http%3A%2F%2Fapp.readspeaker.com%2Fcgi-bin%2Frsent%3Fcustomerid%3D19%26lang%3Dpt_br%26voice%3Draquel%26url%3Dhttp%3A%2F%2Fwww.seplan.am.gov.br%2Fnoticia.php%3Fcod%3D477' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' scale='exactfit' height='18' width='200'>
+
+</embed>	
+
+</object>

@@ -1,0 +1,111 @@
+.tabelaConteudo{
+	padding-right:20px;	
+        margin: -25px 0 72px 0;
+}
+.tabelaConteudo th,td{
+    border:none;
+    font-family: arial, sans-serif;
+        font-size: 15px;
+}
+.tabelaConteudo h1{
+	font-family: arial, sans-serif;
+	font-size: 18px;
+	color: #EDC752;
+	text-align: left;
+	font-weight:normal;
+}
+
+.tabelaConteudo .separador{
+	border-bottom:1px solid #cccccc;	
+}
+
+.tabelaConteudo img{
+	border:0px;	
+}
+
+.tabelaOrcamento{
+	border:1px #cccccc solid;	
+}
+
+.tabelaOrcamento td{
+	border:1px #cccccc solid;	
+}
+
+.tituloTabelaOrcamento{
+	font-family: arial, sans-serif;
+	color: #000000;
+	text-decoration:none;
+	font-size: 16px;
+	background:#F4F4F4;
+	font-weight:bold;
+}
+
+.conteudoTabela{
+	background-color:#f9f9f9;
+	font-family: arial, sans-serif;
+	text-decoration:none;
+	font-size: 14px;
+	color: #666666;
+}
+
+.conteudoTabelaAlt{
+	background-color:#ffffff;
+	font-family: arial, sans-serif;
+	text-decoration:none;
+	font-size: 14px;
+	color: #666666;
+}
+.formLabel{
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	color: #666;
+	letter-spacing: normal;
+	padding-top:10px;
+	padding-left:3px;
+}
+
+button.rounded {
+background: transparent url( ../img/btn_right.png ) no-repeat scroll right top;
+clear: right;
+font-size: 0.8em;
+background-color:#737373;    /* Cor do botÃ£o */
+border:none;
+
+}
+
+button span {
+	display: block;
+	padding: 0 5px 5px 5px;
+	position: relative;
+	white-space: nowrap;
+	height: 30px;
+	line-height: 30px;
+        font-family: arial, sans-serif;
+        font-size: 15px;
+}
+
+button.rounded span {
+background: transparent url( ../img/btn_left2.png ) no-repeat scroll left top;
+color: #FFFFFF;
+background-color:#737373;/* Cor do botÃ£o */
+}
+
+button.rounded:hover {
+background-position: 100% -30px;
+background-color:#666;/* Cor do botÃ£o HOVER */
+}
+
+button.rounded:hover span {
+background-position: 0% -30px;
+background-color:#666;/* Cor do botÃ£o HOVER */
+}
+/* FIM: BOTÃES */
+
+.imgBotao{
+	border:0px;
+        margin:5px;
+}
+
+.imgBotao:hover{
+	cursor:pointer;
+}

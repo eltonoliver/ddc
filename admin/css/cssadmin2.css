@@ -1,0 +1,539 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #2C1D0C;
+	text-decoration: none;
+	/*background-image:url(img/fundo.jpg);*/
+	background-color:#ffffff;
+	background-position:center;
+	background-position: top;
+	background-repeat:no-repeat;
+}
+
+.btMaior{
+	width:125px;	
+}
+
+.FonteTituloPOP {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.linkado:hover{
+	cursor:pointer;	
+}
+
+.tbTopoMax{
+	padding-left:10px;
+	padding-right:20px;
+	background-color:#ffffff;
+	padding-top:10px;
+	padding-bottom:10px;
+	color:#005baa;
+}
+
+.separador{
+	border:1px solid #ffffff;
+}
+
+.separadorPreto{
+	border:1px solid #005baa;
+}
+
+.FonteComentario{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #005baa;
+}
+
+.fonteLegenda{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #005baa;
+	font-style:italic;
+}
+
+.FonteComentario a{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #005baa;
+	text-decoration:underline;
+}
+
+.FonteComentario a:hover{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #ffffff;
+	text-decoration:underline;
+}
+
+.iconeComentario{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666;
+	letter-spacing: normal;
+	padding-top:3px;
+	font-weight:bold;
+	background: url(../img/coment_icon_left.png) no-repeat;
+}
+
+.iconeComentario:hover{
+	cursor:pointer;	
+}
+
+.iconeComentario a{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #4a95ca;
+	letter-spacing: normal;
+	text-decoration:none;
+	padding-top:3px;
+}
+
+.iconeComentario a:hover{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #4a95ca;
+	letter-spacing: normal;
+	text-decoration:underline;
+	padding-top:3px;
+}
+
+.FonteComentarioTitulo{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #ffffff;
+	font-weight:bold;
+}
+
+.caixaComentario{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #7a7a7a;
+	font-style:italic;
+	padding-top:5px;
+	padding-left:20px;
+	text-align:justify;
+	padding-right:10px;
+}
+
+.tbTopoMax h3{
+	color:#005baa;
+}
+
+.tbTopo{
+	letter-spacing:0px;
+	border-collapse: collapse;
+	padding: 0px;
+	word-spacing:0px;
+}
+
+.tabelaMenu{
+	border:1px solid #000000;
+	background-color:#005baa;
+	padding-left:10px; 
+	padding-right:10px;	
+	color:#FFFFFF;
+}
+
+input, textarea, select{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #2C1D0C;
+	border:1px solid #cccccc;
+	border-radius: 3px;
+	padding:3px;
+}
+
+a{
+	color: #ffffff;
+	text-decoration: none; 
+}
+
+a:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.destaque{
+	color: #6c6c6c;
+	text-decoration: none; 
+}
+
+.destaque_italico{
+	color: #6c6c6c;
+	text-decoration: none;
+	font-style:italic; 
+}
+
+.destaque_vermelho{
+	color: #930018;
+	text-decoration: none;
+	font-style:italic; 
+}
+
+
+.destaquePreto{
+	color: #000000;
+	text-decoration: none;
+	font-style:italic; 
+}
+
+.destaqueVermelho{
+	color: #9a1010;
+	text-decoration: none;
+	font-weight:bold; 
+}
+
+.destaqueForte{
+	color: #005baa;
+	text-decoration: underline;
+	font-weight:bold; 
+}
+
+
+.msgBox{
+	border:1px solid #ffffff;
+	background-color:#f3f3f3;
+	font-weight:bold;
+	text-align:center;
+	padding-top:10px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+
+.selecionado{
+	color: #ffffff;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+
+.contatocampo{
+	background-color:#005baa;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #2C1D0C;
+	text-decoration: none;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.rodape{
+	background-color:#005baa;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	text-decoration: none;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+	line-height:150%;
+	border:1px solid #000000;
+}
+
+.tbCorpo{
+	border-left:#0000 1px solid;	
+	border-right:#0000 1px solid;	
+}
+
+.separadador{
+	border-bottom: 1px solid #cccccc;
+}
+
+h2 .separadador a{
+	color:inherit;
+	text-decoration:none;
+}
+
+h2 .separadador a:hover{
+	color:inherit;
+	text-decoration:none;
+}
+
+
+.separadadorAzul{
+	border-bottom: 1px solid #005baa;
+}
+
+fieldset{
+	border: 1px solid #005baa;
+}
+
+
+.tabelaForm td{
+	background-color:#f3f3f3;
+	padding:3px;	
+}
+
+.tbLista td{
+	padding:6px;
+	line-height:150%;	
+}
+
+.tbTitulo{
+	background-color:#005baa;
+	color:#ffffff;
+	font-weight:bold;
+	font-size:14px;	
+}
+
+.tbTituloCinza{
+	background-color:#666666;
+	color:#ffffff;
+	font-weight:bold;
+	font-size:14px;	
+}
+
+.tbTituloPreto{
+	color:#000000;
+	font-weight:bold;
+	font-size:14px;	
+}
+
+
+
+.tbNormal{
+	background-color:#f3f3f3;
+}
+
+.tbNormal a{
+	color:#005baa;
+	text-decoration:none;
+}
+
+.tbNormal a:hover{
+	color:#005baa;
+	text-decoration:underline;
+}
+
+
+.tbNormalAlt a{
+	color:#005baa;
+	text-decoration:none;
+}
+
+.tbNormalAlt a:hover{
+	color:#005baa;
+	text-decoration:underline;
+}
+
+.tbNormalAlt{
+	background-color:#ffffff;
+}
+
+p {
+	margin-top:0px;
+}
+h1 {
+	font-size: 1.6em;
+	color: #000000;
+	text-decoration: none; 
+	margin: 0px;
+	padding: 0px;
+}
+h2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color: #363636;
+	font-weight:bold;
+	
+}
+h3 {
+	font-size: 1.5em;
+	color: #ffffff;
+	text-decoration: none;
+}
+h4 {
+	width: 283px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	height: 41px;
+}
+h5 {
+	font-size: 1.2em;
+	padding: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+h6{
+	font-size: 1em;
+	text-align: center;
+	margin: 0px;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	color: #2D1D0D;
+}
+
+.titulo {
+	font-size: 27px;
+	padding: 0px;
+	margin-top: 7px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #EFA803;
+}
+
+.textocampo{
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	color: #2C1D0C;
+	text-decoration: none;
+}
+.campo{
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #2C1D0C;
+	text-decoration: none;
+}
+.menu {
+
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	color: #2C1D0C;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.menu:link {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	color: #2C1D0C;
+	text-decoration: none;
+	text-transform: uppercase;
+
+
+}
+.menu:hover {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.conteudo {
+	padding:20px;
+	min-height:516px;
+	background-color:#ffffff;
+	text-align:left;
+}
+
+.conteudo a{
+	color:#005baa;
+	text-decoration:underline;
+}
+
+.conteudo a:hover{
+	color:#000000;
+	text-decoration:underline;	
+}
+
+button{
+	background-color:#666666;
+	color:#ffffff;
+	border:outset 1px #ffffff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:3px;
+	padding-top:3px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	cursor:pointer;
+	border-radius:3px;
+}
+
+button:hover{
+	cursor:pointer;
+	background-color:#838383;
+	color:#ffffff;
+	border:outset 1px #ffffff;
+}
+/*button:hover{
+	background-color:#005baa;
+	color:#ffffff;
+	border:outset 1px #ffffff;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:3px;
+	padding-top:3px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	cursor:pointer;
+}
+*/
+
+.imgBotao{
+	border:0px;
+}
+
+.imgBotao:hover{
+	cursor:pointer;
+}
+
+.tdIMG{
+	border:1px solid #ffffff;
+	padding:3px;
+}
+.tdIMGTitulo{
+	border:1px solid #ffffff;
+	padding:3px;
+	background-color:#005baa;
+}
+
+/*------- NOVOS */
+.hover{
+	cursor:pointer;	
+}
+
+.imgHover{
+	border:0px;
+	cursor:pointer;	
+}
+
+
+#conteudo_news{
+	border:1px solid #ccc;
+	height:80px;
+	position:relative;
+	overflow:hidden;
+}
+
+#conteudo_news_list{
+	position:absolute;
+	top:0px;
+	left:0px;
+	padding:5px;
+}
+
+#conteudo_news_scroll{
+	height:80px;
+	width:20px;
+	padding:3px;
+	float:left;
+}
+
+#conteudo_news_scroll img{
+	margin-top:15px;
+}

@@ -1,0 +1,22 @@
+[17-Jan-2012 11:33:38] PHP Warning:  include(resize-class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/memorial/public_html/class/resize-image/index.php on line 4
+[17-Jan-2012 11:33:38] PHP Warning:  include(resize-class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/memorial/public_html/class/resize-image/index.php on line 4
+[17-Jan-2012 11:33:38] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'resize-class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/memorial/public_html/class/resize-image/index.php on line 4
+[17-Jan-2012 11:33:38] PHP Fatal error:  Class 'resize' not found in /home/memorial/public_html/class/resize-image/index.php on line 7
+[17-Jan-2012 11:33:52] PHP Warning:  include(resize-class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/memorial/public_html/class/resize-image/index.php on line 4
+[17-Jan-2012 11:33:52] PHP Warning:  include(resize-class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/memorial/public_html/class/resize-image/index.php on line 4
+[17-Jan-2012 11:33:52] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'resize-class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/memorial/public_html/class/resize-image/index.php on line 4
+[17-Jan-2012 11:33:52] PHP Fatal error:  Class 'resize' not found in /home/memorial/public_html/class/resize-image/index.php on line 7
+[17-Jan-2012 11:34:23] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 34
+[17-Jan-2012 11:34:23] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 35
+[17-Jan-2012 11:34:23] PHP Warning:  Division by zero in /home/memorial/public_html/class/resize-image/resize_class.php on line 182
+[17-Jan-2012 11:34:23] PHP Warning:  Division by zero in /home/memorial/public_html/class/resize-image/resize_class.php on line 183
+[17-Jan-2012 11:34:23] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home/memorial/public_html/class/resize-image/resize_class.php on line 76
+[17-Jan-2012 11:34:23] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 77
+[17-Jan-2012 11:34:23] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 201
+[17-Jan-2012 11:37:20] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 34
+[17-Jan-2012 11:37:20] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 35
+[17-Jan-2012 11:37:20] PHP Warning:  Division by zero in /home/memorial/public_html/class/resize-image/resize_class.php on line 182
+[17-Jan-2012 11:37:20] PHP Warning:  Division by zero in /home/memorial/public_html/class/resize-image/resize_class.php on line 183
+[17-Jan-2012 11:37:20] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home/memorial/public_html/class/resize-image/resize_class.php on line 76
+[17-Jan-2012 11:37:20] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 77
+[17-Jan-2012 11:37:20] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home/memorial/public_html/class/resize-image/resize_class.php on line 201

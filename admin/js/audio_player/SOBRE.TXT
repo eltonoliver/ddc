@@ -1,0 +1,6 @@
+http://jullymac.net/tutoriais/audio-player/
+
+----
+http://wpaudioplayer.com/standalone/
+http://www.macloo.com/examples/audio_player/
+http://www.macloo.com/examples/audio_player/options.html

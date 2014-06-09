@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+.font-face(@family, @file, @weight, @style) {
+    @font-face{
+        font-family: @family;
+        src:url('fonts/@{file}.eot');
+        src:url('fonts/@{file}.eot?#iefix') format('embedded-opentype'),
+            url('fonts/@{file}.woff') format('woff'),
+            url('fonts/@{file}.ttf') format('truetype'),
+            url('fonts/@{file}.svg#@{family}') format('svg');
+        font-weight: @weight;
+        font-style: @style;
+    }
+}
+
+.press(@light) when (@light = light) {
+    box-shadow: inset 0 1px 5px rgba(0,0,0, .5);
+}
+
+.press(@dark) when (@dark = dark) {
+    box-shadow: inset 0 1px 5px rgba(200,200,200, .2);
+}
+
+.shadow(@value-x: 0; @value-y: 0; @blur: 5px; @color: rgba(0,0,0,.3)) {
+    box-shadow: @value-x @value-y @blur @color;
+}
+
+.transition(@what: all; @time: .1s; @how: linear) {
+    -webkit-transition: @what @time @how;
+       -moz-transition: @what @time @how;
+         -o-transition: @what @time @how;
+            transition: @what @time @how;
+}
+
+.transform-origin(@value-x: center; @value-y: center) {
+    -webkit-transform-origin: @value-x @value-y;
+       -moz-transform-origin: @value-x @value-y;
+         -o-transform-origin: @value-x @value-y;
+            transform-origin: @value-x @value-y;
+}
+
+.scale(@value) {
+    -webkit-transform: scale(@value);
+       -moz-transform: scale(@value);
+         -o-transform: scale(@value);
+            transform: scale(@value);
+}
+
+.translateY(@value) {
+    -webkit-transform: translateY(@value);
+       -moz-transform: translateY(@value);
+         -o-transform: translateY(@value);
+            transform: translateY(@value);
+}
+
+.translateX(@value) {
+    -webkit-transform: translateX(@value);
+       -moz-transform: translateX(@value);
+         -o-transform: translateX(@value);
+            transform: translateX(@value);
+}
+
+.opacity(@value) {
+    opacity: @value/100;
+    filter: alpha(opacity=@value);
+}
