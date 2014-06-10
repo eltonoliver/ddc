@@ -205,7 +205,7 @@ $qryBanner = $db->query($strBanner);
             <div class="list">
             
                 <?php
-                $strArt = "SELECT DISTINCT tb1.* FROM tb_conteudo AS tb1 INNER JOIN tb_conteudo AS tb2 ON tb1.idConteudo = tb2.idConteudoRelacionado WHERE tb1.idTipoConteudo = 15 AND tb1.inPublicar = 1 ORDER BY idConteudo DESC LIMIT 6";
+                $strArt = "SELECT DISTINCT tb1.* FROM tb_conteudo AS tb1 INNER JOIN tb_conteudo AS tb2 ON tb1.idConteudo = tb2.idConteudoRelacionado WHERE tb1.idTipoConteudo = 15 AND tb1.inPublicar = 1 ORDER BY idConteudo DESC LIMIT 4";
                 $qryArt = $db->query($strArt);
                 foreach ($qryArt as $artigo) {
                     ?>
