@@ -5,6 +5,8 @@
                 $qryContador = $db->query($strContador);
            if(!empty($qryContador)){
         ?>
+        <!--Contador Oculto -->
+        <!--
         <div class="contador">
             
 
@@ -18,6 +20,19 @@
 
             <div id="countdown" class="contador_container"></div>
         </div>
+    -->
+          <div class="a-ad">
+            <?php
+                $strPublicidade = "SELECT nmLinkImagem,nmLinkExterno,nmTituloConteudo FROM tb_conteudo WHERE idTipoConteudo = 14 and inPublicar = 1 and NOW() between dtDataConteudo and dtDataExpiracao and ordem = 3 order by ordem LIMIT 1";
+                $qryPublicidade = $db->query($strPublicidade);
+                    foreach ($qryPublicidade as $item) {
+            ?>
+                <a title="<?php echo $item["nmTituloConteudo"]; ?>" target="_blank" href="<?php echo $item["nmLinkExterno"]; ?>">
+                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=335"/>
+                </a>
+            <?php } ?>
+        </div>
+        <!--Fim Div Contador -->
         <?php 
         
            }else{ }
@@ -65,16 +80,17 @@
                     Pesquisas
                 </span>
             </h2>
+              <div class="a-banner">
             <?php
                 $strPesq = "SELECT nmLinkImagem,nmLinkExterno,nmTituloConteudo FROM tb_conteudo WHERE idTipoConteudo = 25 AND ordem > 1 AND ordem < 5 ORDER BY ordem ASC LIMIT 3";
                 $qryPesq = $db->query($strPesq);
                     foreach ($qryPesq as $item) {
             ?>
             <a title="<?php echo $item["nmTituloConteudo"]; ?>" href="<?php echo $item["nmLinkExterno"]; ?>" target="_blank">
-                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=160" height="135px;" width="240px;" />
+                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=240&h=135"  />
                 </a>
-                <br />
             <?php } ?>
+        </div>
         </div>
     </div>
 
@@ -89,7 +105,7 @@
             <a data-modal='<div  style="width: 800px; height:588px; overflow: auto;"> <?php require "modulos/criterioBrasil.php"; ?> </div>
            ' class="fancybox" rel="group" href=""> 
          
-                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=240" height="135px;" width="240px;" />
+                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=240&h=135" />
             </a>
                     <?php } ?>
         </div>
@@ -101,7 +117,7 @@
                     foreach ($qryPublicidade as $item) {
             ?>
                 <a title="<?php echo $item["nmTituloConteudo"]; ?>" target="_blank" href="<?php echo $item["nmLinkExterno"]; ?>">
-                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=270" height="135px;" width="240px;" />
+                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=240&h=135"  />
                 </a>
             <?php } ?>
         </div>
@@ -115,7 +131,7 @@
                     foreach ($qryServico as $item) {
             ?>
                 <a title="<?php echo $item["nmTituloConteudo"]; ?>" href="<?php echo $item["nmLinkExterno"]; ?>">
-                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=240" height="135px;" width="240px;"  />
+                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=240&h=135"   />
                 </a>
             <?php } ?>
             <?php
@@ -124,21 +140,11 @@
                     foreach ($qryVoice as $item) {
             ?>
             <a title="<?php echo $item["nmTituloConteudo"]; ?>" href="<?php echo $item["nmLinkExterno"]; ?>" target="_blank">
-                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=240" height="135px;" width="240px;"  />
+                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=240&h=135"   />
                 </a>
            <?php } ?>
         </div>
 
-        <div class="a-ad">
-            <?php
-                $strPublicidade = "SELECT nmLinkImagem,nmLinkExterno,nmTituloConteudo FROM tb_conteudo WHERE idTipoConteudo = 14 and inPublicar = 1 and NOW() between dtDataConteudo and dtDataExpiracao and ordem = 3 order by ordem LIMIT 1";
-                $qryPublicidade = $db->query($strPublicidade);
-                    foreach ($qryPublicidade as $item) {
-            ?>
-                <a title="<?php echo $item["nmTituloConteudo"]; ?>" target="_blank" href="<?php echo $item["nmLinkExterno"]; ?>">
-                    <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=480" height="135px;" width="240px;" />
-                </a>
-            <?php } ?>
-        </div>
+      
     </div>
 </aside>

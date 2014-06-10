@@ -1,5 +1,6 @@
 
 <?php
+
 if (!isset($titulo) || vazio($titulo)) {
     redirecionar($url_raiz . '404');
 } else {

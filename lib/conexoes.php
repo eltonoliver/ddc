@@ -5,9 +5,9 @@
         $mysql_password = 'vertrigo';
         $mysql_database = '2014_ddc';
     } else if ($_SERVER['SERVER_NAME'] == 'localhost' ||
-            strstr($_SERVER['SERVER_NAME'], '') ||
-            strstr($_SERVER['SERVER_NAME'], '') ||
-            strstr($_SERVER['REMOTE_ADDR'], '')
+            strstr($_SERVER['SERVER_NAME'], 'localhost') ||
+            strstr($_SERVER['SERVER_NAME'], 'localhost') ||
+            strstr($_SERVER['REMOTE_ADDR'], '127.0.0.1')
     ) {
         $mysql_address = 'localhost';
         $mysql_username = 'root';

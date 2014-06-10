@@ -167,15 +167,21 @@ $qryBanner = $db->query($strBanner);
                 </span>
             </h2>
             <?php
-              $str = "SELECT nmLinkImagem,nmLinkExterno,nmTituloConteudo,ordem FROM tb_conteudo WHERE idTipoConteudo = 25 AND ordem = 20 LIMIT 1";
+              $str = "SELECT idConteudo, nmLinkImagem,nmLinkExterno,nmTituloConteudo,ordem FROM tb_conteudo WHERE idTipoConteudo = 4 AND idConteudo = 539 LIMIT 1";
               $qry = $db->query($str);
+
             ?>
             <a title="<?php echo $qry[0]["nmTituloConteudo"]; ?>" href="acervo-videos">
                
                 <?php
                 if (is_file("arquivos/enviados/image/" . $qry[0]["nmLinkImagem"])) {
                     ?>
-                    <img width="100%" alt="<?php echo $qry[0]["nmCategoria"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $qry[0]["nmLinkImagem"]; ?>&w=480&h=270" />
+                    
+                    <div id="acervovideos" class="pics">
+                       <!-- <img width="100%" alt="<?php echo $qry[0]["nmCategoria"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $qry[0]["nmLinkImagem"]; ?>&w=480&h=270" /> -->
+                        <img alt="5 Fatos da Cidade" src="img/5-fatos-da-cidade.jpg" />
+                        <img alt="Programa" src="img/videos-eleitorais.jpg" />
+                    </div>
                     <?php
                 }
                 ?>                

@@ -247,6 +247,15 @@ if (!$ajax):
         <?php echo stripslashes($geralConfig[0]["nmGoogleAnalytics"]); ?>
     <?php } ?>
     </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.ddchannel.com.br/js/cycle.js"></script>
+    <script type="text/javascript">
+        $(function(){  
+                
+              $('#acervovideos').cycle({ timeout:  -600 });
+
+        });
+    </script>
     </html>
     <?php
 endif;
