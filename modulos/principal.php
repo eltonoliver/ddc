@@ -122,7 +122,7 @@ $qryBanner = $db->query($strBanner);
             </h2>
             <div class="grid">
                 <?php
-                $str = "SELECT tb_galeria_imagem.*, tb_galeria.nmGaleria FROM tb_galeria_imagem INNER JOIN tb_galeria ON tb_galeria.idGaleria = tb_galeria_imagem.idGaleria ORDER BY RAND( ) LIMIT 12";
+                $str = "SELECT tb_galeria_imagem.*, tb_galeria.nmGaleria FROM tb_galeria_imagem INNER JOIN tb_galeria ON tb_galeria.idGaleria = tb_galeria_imagem.idGaleria ORDER BY RAND( ) LIMIT 9";
                 $qry = $db->query($str);
                 foreach ($qry as $item) {
                     ?>
