@@ -11,7 +11,7 @@
         <div class="fr">
             Durango Duarte Channel ® 2014
             <br />
-            Desenvolvido por <a target="_blank" href="//www.ugagogo.com.br">Ugagogo Invencionices Tecnológicas</a>
+           
         </div>
     </div>
 </footer>
