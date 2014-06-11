@@ -73,7 +73,9 @@ $qryBanner = $db->query($strBanner);
             <?php
             if (is_file("arquivos/enviados/image/" . $qry[0]["nmLinkImagem"])) {
                 ?>
+                
                 <img alt="<?php echo $qry[0]["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $qry[0]["nmLinkImagem"]; ?>&w=480&h=480" />
+                
                 <?php
             }
             ?>
