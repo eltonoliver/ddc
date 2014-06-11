@@ -143,19 +143,79 @@ $qryBanner = $db->query($strBanner);
                     Acervo Histórico
                 </span>
             </h2>
+
+
             <?php
+
+              /*QUERY PARA PEGAR AS IMAGENS COM A TAG DE SLIDEHISTORICO */
+              /*CASO SEJA DELETADO ESSA CATEGORIA POSSIVELMENTE IRÁ GERAR ERRO NO SLIDESHOW*/
+              $queryIdImages = "SELECT idArquivo FROM tb_arquivo_categoria WHERE idCategoria = 53";
+              $query = $db->query($queryIdImages);
+              $qtd = count($query); 
+              
+              if($qtd > 1){
+
+                    for($i = 0 ; $i <= $qtd; $i++){
+
+                        if(isset($query[$i]['idArquivo'])){
+                          $completaConsulta[] = $query[$i]['idArquivo'];
+                        }else{break;}
+                    }
+                   
+              /*JUNTANDO POR VIRGULA*/
+              $dados = join(',',$completaConsulta);
+                
+                $queryImage = "SELECT nmNomeArquivo FROM tb_arquivo WHERE idArquivo IN(".$dados.")";   
+                $imagesSlide = $db->query($queryImage);
+                
+
+              }else{
+
+                   $queryImage = "SELECT nmNomeArquivo FROM tb_arquivo WHERE idArquivo = ".$query[0]['idArquivo'];   
+                   $imagesSlide = $db->query($queryImage);     
+              } 
+
+              $coutImage = count($imagesSlide);
+              
+             
+              /*FIMQUERY*/  
+
               $str = "SELECT nmLinkImagem,nmLinkExterno,nmTituloConteudo,ordem FROM tb_conteudo WHERE idTipoConteudo = 25 AND ordem = 20 LIMIT 1";
               $qry = $db->query($str);
             ?>
             <a title="<?php echo $qry[0]["nmTituloConteudo"]; ?>" href="acervo-historico">
                
                 <?php
+
                 if (is_file("arquivos/enviados/image/" . $qry[0]["nmLinkImagem"])) {
                     ?>
-                    <img width="100%" alt="<?php echo $qry[0]["nmCategoria"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $qry[0]["nmLinkImagem"]; ?>&w=480&h=270" />
+                    <div id="acervohistorico" class="pics">
+                       <!-- <img width="100%" alt="<?php echo $qry[0]["nmCategoria"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $qry[0]["nmLinkImagem"]; ?>&w=480&h=270" /> -->
+                       <?php 
+                            if($coutImage > 1){
+                                        //lista imagens
+                                        for($i = 0 ; $i < $coutImage ; $i++){
+                                            if(isset($imagesSlide[$i]['nmNomeArquivo'])){ 
+                                                $listaSlides .= '<img src="arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo']. '" />';
+                                             }else{break;}  
+                                       }
+
+                                    echo $listaSlides;
+                            }else{
+
+                                    echo '<img src="arquivos/enviados/image/'.$imagesSlide[0]['nmNomeArquivo']. '" />';
+
+                            }
+
+                        ?>
+
+                    </div>
                     <?php
                 }
-                ?>                
+
+                ?>  
+
+
             </a>
         </div>
         <br>
