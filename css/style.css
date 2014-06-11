@@ -2644,8 +2644,50 @@ a.title-section__name:active {
 
 /*REWRITE*/
 
-.a-pesquisas{
+.imgefeito {
+  margin: 0;
+  overflow: hidden;
+  float: left;
+  position: relative;
+}
+.imgefeito a {
+  text-decoration: none;
+  float: left;
+}
+.imgefeito a:hover {
+  cursor: pointer;
+}
 
+.imgefeito a img {
+  float: left;
+  margin: 0;
+  border: none;
   
 }
+
+.
+.imgefeito a:hover .desc{
+  
+  font-size: 1.1em;
+  padding: 10px 0;
+  background: #111;
+  filter:alpha(opacity=75);
+  opacity:.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; /*--IE 8 Transparency--*/
+  position: absolute;
+  bottom: 11px;
+  left: 11px;
+  padding: 10px;
+  margin: 0;
+  width: 219px;
+  border-top: 1px solid #999;
+}
+.imgefeito a:hover .desc strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size:10px;
+}
+
+.imgefeito a .desc {  display: none; }
+
 
