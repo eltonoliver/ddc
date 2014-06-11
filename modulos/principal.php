@@ -37,7 +37,7 @@ $qryBanner = $db->query($strBanner);
             <a href="noticias/<?php echo $item["nmTituloAmigavel"]; ?>">
                  <h3 class="latest-news__title"><?php echo resume(stripslashes($item["nmTituloConteudo"]), 90); ?></h3>
                 <p>
-                    <?php echo resume(($item["nmConteudo"]), 330); ?>
+                    <?php echo resume(($item["nmConteudo"]), 250); ?>
                     <b>Leia mais</b>
                 </p>    
                 </a>
