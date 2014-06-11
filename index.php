@@ -253,6 +253,7 @@ if (!$ajax):
         $(function(){  
                 
               $('#acervovideos').cycle({ timeout:  -600 });
+              
               $('#acervohistorico').cycle({ timeout:  -600 });
 
 
