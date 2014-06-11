@@ -47,8 +47,8 @@
             ?>
             <a title="<?php echo $item["nmTituloConteudo"]; ?>" href="<?php echo $item["nmLinkExterno"]; ?>">
                     <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=240" />
-                </a>
-                    <?php } ?>
+            </a>
+            <?php } ?>
         </div>
     </div>
 
@@ -65,17 +65,23 @@
                 $strBannerPop = "SELECT * FROM tb_conteudo WHERE idTipoConteudo = 32 ORDER BY idConteudo DESC LIMIT 1 ";
                 $bannerJorPop = $db->query($strBannerPop);
             ?>
-            <a title="<?php echo $bannerJorPop[0]["nmTituloConteudo"]; ?>" href="minha-reportagem">
-                <img width="100%" alt="<?php echo $bannerJorPop[0]["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $bannerJorPop[0]["nmLinkImagem"]; ?>&w=480&h=480" />
-            </a>
+            <div class="imgefeito">
+                <a title="<?php echo $bannerJorPop[0]["nmTituloConteudo"]; ?>" href="minha-reportagem">
+                   
+                        <img width="100%" alt="<?php echo $bannerJorPop[0]["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $bannerJorPop[0]["nmLinkImagem"]; ?>&w=480&h=480" />
+                        <span class="desc">
+                          <?php  $hora = explode(":", substr($bannerJorPop[0]["dtDataCadastro"],-8)); ?>  
+                         
+                            <?php echo $hora[0]."h".$hora[1]." - ".$bannerJorPop[0]["nmTituloConteudo"];  ?>
+                         </span>
+                    
+                </a>
+            </div>
 
-            <div id="desc_imagem"> <?php 
-                    $hora = explode(":", substr($bannerJorPop[0]["dtDataCadastro"],-8));
-                    echo $hora[0]."h".$hora[1]." - ".$bannerJorPop[0]["nmTituloConteudo"];  ?> </div>
-        </div>
 
         <div class="a-pesquisas">
             <h2 class="title-section">
+                <br>
                 <span class="title-section__name">
                     Pesquisas
                 </span>
