@@ -1,4 +1,6 @@
+
 <?php
+
 //header('Content-type: text/html; charset=UTF-8');
 $protocolo = (strpos(strtolower($_SERVER['SERVER_PROTOCOL']), 'https') === false) ? 'http' : 'https';
 $host = $_SERVER['HTTP_HOST'];
