@@ -136,7 +136,7 @@ else
             <link rel="stylesheet" href="css/mudancamenu.css" />
             <link rel="stylesheet" href="css/nprogress.css" />
 
-            <link rel="stylesheet" type="text/css" href="http://www.ddchannel.com.br/css/style_slide.css" />
+            <link rel="stylesheet" type="text/css" href="http://localhost/ddc/css/style_slide.css" />
 
   
             <?php /* <link rel="stylesheet" href="css/radio.css" /> */ ?>
