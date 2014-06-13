@@ -2363,10 +2363,14 @@ a.title-section__name:active {
   }
 }
 .contador {
+
   background: #f0f0f0;
-  text-align: center;
   padding: 15px;
   margin-bottom: 30px;
+}
+.contador-titulo{
+    margin-left: 60px;
+
 }
 .contador > h4 {
   color: #333;
@@ -2400,7 +2404,7 @@ a.title-section__name:active {
 .countdown_section {
   display: inline-block;
   font-size: 10px;
-  width: 10%;
+  width: 13%;
 }
 .countdown_amount {
   color: #333;
@@ -2410,6 +2414,18 @@ a.title-section__name:active {
 .countdown_descr {
   display: none;
 }
+.contador_texto{
+
+  margin-left: 148px;
+
+}
+
+.contador_container{
+
+  padding-left: 12px;
+
+}
+
 .old-browser {
   background: #e74c3c;
   border-bottom: 2px solid #c0392b;

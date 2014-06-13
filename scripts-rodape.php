@@ -15,8 +15,6 @@ if ($arquivoModulo != 'flip') {
 
         });
     
-
-    
         var theInt = null;
         var $crosslink, $navthumb;
         var curclicked = 0;
@@ -39,7 +37,7 @@ if ($arquivoModulo != 'flip') {
                 if( 6 == curclicked )
                     curclicked = 0;
                 
-            }, 3000);
+            }, 5000);
         };
         
         $(function(){
@@ -62,7 +60,7 @@ if ($arquivoModulo != 'flip') {
 
     <script src="js/audiojs/audio.min.js"></script>
     <script type="text/javascript">
-    
+
         var url_raiz = '<?php echo $url_raiz ?>';
 
     </script>
