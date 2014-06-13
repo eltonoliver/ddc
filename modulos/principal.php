@@ -22,7 +22,7 @@ $qryBanner = $db->query($strBanner);
                 <?php
                 if (is_file("arquivos/enviados/image/" . $item["nmLinkImagem"])) {
                     ?>
-            <a href="noticias/<?php echo $item["nmTituloAmigavel"]; ?>">
+                    <a href="noticias/<?php echo $item["nmTituloAmigavel"]; ?>">
                     <img alt="<?php echo $item["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $item["nmLinkImagem"]; ?>&w=480&h=270" />
                     
                     <h3 class="latest-news__title"><?php echo resume(stripslashes($item["nmTituloConteudo"]), 30); ?></h3>
@@ -105,15 +105,69 @@ $qryBanner = $db->query($strBanner);
                         
                     </div>
                 </div>
-                <div class="panel" title="Panel 2">
-                    <div class="wrapper">
-                        <img src="http://www.ddchannel.com.br/images_teste/tempphoto-2.jpg" alt="temp" />
-                        <div class="photo-meta-data">
-                            Chicago Bears at Seattle Seahawks<br />
-                            <span>Fifth field goal, overtime win for the Seahawks</span>
-                        </div>
-                    </div>
-                </div>      
+
+                <?php
+
+                          /*SLIDESHOW PRINCIPAL */
+                          /*CASO SEJA DELETADO ESSA CATEGORIA POSSIVELMENTE IRÁ GERAR ERRO NO SLIDESHOW*/
+                          $queryIdSlidePrincipal = "SELECT idArquivo FROM tb_arquivo_categoria WHERE idCategoria = 54";
+                          $query = $db->query($queryIdSlidePrincipal);
+                          $qtd = count($query); 
+                             
+                          if($qtd > 1){
+
+                                for($i = 0 ; $i <= $qtd; $i++){
+
+                                    if(isset($query[$i]['idArquivo'])){
+                                      $completaConsulta[] = $query[$i]['idArquivo'];
+                                    }else{break;}
+                                }
+                               
+                          /*JUNTANDO POR VIRGULA*/
+                          $dados = join(',',$completaConsulta);
+                            
+                            $querySlide = "SELECT nmNomeArquivo,nmTituloArquivo,nmDescricaoArquivo FROM tb_arquivo WHERE idArquivo IN(".$dados.")";   
+                            $imagesSlide = $db->query($querySlide);
+
+
+                            
+
+                          }else{
+
+                               $queryquerySlideImage = "SELECT nmNomeArquivo,nmTituloArquivo,nmDescricaoArquivo FROM tb_arquivo WHERE idArquivo = ".$query[0]['idArquivo'];   
+                               $imagesSlide = $db->query($queryquerySlideImage);     
+                          } 
+
+                          $countImage = count($imagesSlide);
+                          
+                         
+                          /*FIMQUERY*/  
+
+
+                          /*LIST SLIDE*/
+
+                            for($i = 0 ; $i <= $countImage;$i++){
+
+                              /*  echo '
+                                          <div class="panel" title="Panel '.($i+2).' ">
+                                            <div class="wrapper">
+                                                <img src="http://www.ddchannel.com.br/image/'.$imagesSlide[$i]['nmNomeArquivo'].'" alt="temp" />
+                                                <div class="photo-meta-data">
+                                                    Chicago Bears at Seattle Seahawks<br />
+                                                    <span>Fifth field goal, overtime win for the Seahawks</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    ';*/
+                            }
+
+                          /*END LIST*/
+
+                          
+            ?>
+
+                    
                  <div class="panel" title="Panel 3">
                     <div class="wrapper">
                         
@@ -164,9 +218,9 @@ $qryBanner = $db->query($strBanner);
         <div id="movers-row">
 
             <div><a href="#1" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-2thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
-            <div><a href="#3" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-3thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
-            <div><a href="#4" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-4thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
-            <div><a href="#5" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-5thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+            <div><a href="#2" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-3thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+            <div><a href="#3" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-4thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+            <div><a href="#4" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-5thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
           <!--  <div><a href="#6" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-6thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div> -->
         </div>
 
