@@ -2400,7 +2400,7 @@ a.title-section__name:active {
 .countdown_section {
   display: inline-block;
   font-size: 10px;
-  width: 20%;
+  width: 10%;
 }
 .countdown_amount {
   color: #333;
@@ -2693,4 +2693,18 @@ a.title-section__name:active {
 
 .imgefeito a .desc {  display: none; }
 .imgefeito a:hover .mais { visibility: hidden;}
+
+
+.banner-rodape{
+  margin-top: 3px;
+  border: red 0px solid;
+  
+}
+
+.banner-rodape img{
+
+  width: 455px;
+  padding-top: 15px;
+}
+
 

@@ -4,9 +4,67 @@ if ($arquivoModulo != 'flip') {
     <!-- JS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+
+     <script type="text/javascript">
+        $(function(){  
+                
+              $('#acervovideos').cycle({ timeout:  -600 });
+              
+              $('#acervohistorico').cycle({ timeout:  -600 });
+
+
+        });
+    
+
+    
+        var theInt = null;
+        var $crosslink, $navthumb;
+        var curclicked = 0;
+        
+        theInterval = function(cur){
+            clearInterval(theInt);
+            
+            if( typeof cur != 'undefined' )
+                curclicked = cur;
+            
+            $crosslink.removeClass("active-thumb");
+            $navthumb.eq(curclicked).parent().addClass("active-thumb");
+                $(".stripNav ul li a").eq(curclicked).trigger('click');
+            
+            theInt = setInterval(function(){
+                $crosslink.removeClass("active-thumb");
+                $navthumb.eq(curclicked).parent().addClass("active-thumb");
+                $(".stripNav ul li a").eq(curclicked).trigger('click');
+                curclicked++;
+                if( 6 == curclicked )
+                    curclicked = 0;
+                
+            }, 3000);
+        };
+        
+        $(function(){
+            
+            $("#main-photo-slider").codaSlider();
+            
+            $navthumb = $(".nav-thumb");
+            $crosslink = $(".cross-link");
+            
+            $navthumb
+            .click(function() {
+                var $this = $(this);
+                theInterval($this.parent().attr('href').slice(1) - 1);
+                return false;
+            });
+            
+            theInterval();
+        });
+    </script>
+
     <script src="js/audiojs/audio.min.js"></script>
     <script type="text/javascript">
+    
         var url_raiz = '<?php echo $url_raiz ?>';
+
     </script>
     <script src="js/radio.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
@@ -17,6 +75,7 @@ if ($arquivoModulo != 'flip') {
     <script type="text/javascript" src="js/youtube.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/loadPage.js"></script>
+
     <!-- <script type="text/javascript" src="js/mascaras.js"></script> -->
     <?php /* ?>
       <script>
@@ -276,6 +335,9 @@ if ($arquivoModulo != 'flip') {
             $('#year').text(austDay.getFullYear());
         });
     </script>
+
+
+
     <?php
 }
 ?>

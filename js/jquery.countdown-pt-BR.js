@@ -2,6 +2,7 @@
    Brazilian initialisation for the jQuery countdown extension
    Translated by Marcelo Pellicano de Oliveira (pellicano@gmail.com) Feb 2008.
    and Juan Roldan (juan.roldan[at]relayweb.com.br) Mar 2012. */
+   
 (function($) {
 	$.countdown.regional['pt-BR'] = {
 		labels: ['Anos', 'Meses', 'Semanas', 'Dias', 'Horas', 'Min', 'Seg'],
