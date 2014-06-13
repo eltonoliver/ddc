@@ -76,19 +76,34 @@ $qryBanner = $db->query($strBanner);
 
 
                 <!--Slide --> 
+
 <div id="page-wrap">
-                                           
+           <?php
+                $strContador = "SELECT nmTituloConteudo,dtDataConteudo,nmResumo FROM tb_conteudo WHERE inPublicar=1 and idTipoConteudo=28 order by dtDataConteudo desc limit 1";
+                $qryContador = $db->query($strContador);
+            
+
+        ?>                                
     <div class="slider-wrap">
         <div id="main-photo-slider" class="csw">
             <div class="panelContainer">
 
                 <div class="panel" title="Panel 1">
                     <div class="wrapper">
-                        <img src="http://www.ddchannel.com.br/images_teste/tempphoto-1.jpg" alt="temp" />
-                        <div class="photo-meta-data">
-                            Photo Credit: <a href="http://flickr.com/photos/astrolondon/2396265240/">Kaustav Bhattacharya</a><br />
-                            <span>"Free Tibet" Protest at the Olympic Torch Rally</span>
+                      <div class="contador">
+            
+
+                            <h4><?php echo $qryContador[0]["nmTituloConteudo"]; ?></h4>
+
+                            <p>
+                                <?php echo $qryContador[0]["nmResumo"]; ?>
+                                <br />
+                                Faltam apenas:
+                            </p>
+
+                            <div id="countdown" class="contador_container"></div>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="panel" title="Panel 2">
@@ -378,6 +393,9 @@ $qryBanner = $db->query($strBanner);
                 }
                 ?>
             </div>
+
+            <div class="banner-rodape"> <img src="arquivos/enviados/image/bannerteste.png" /> </div>
         </div>
     </div>
 </div> 
+

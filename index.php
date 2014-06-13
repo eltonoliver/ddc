@@ -247,68 +247,16 @@ if (!$ajax):
         <?php echo stripslashes($geralConfig[0]["nmGoogleAnalytics"]); ?>
     <?php } ?>
     </script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    
     <script type="text/javascript" src="http://www.ddchannel.com.br/js/cycle.js"></script>
 
 
   <script type="text/javascript" src="http://www.ddchannel.com.br/js/jquery-easing-1.3.pack.js"></script>
   <script type="text/javascript" src="http://www.ddchannel.com.br/js/jquery-easing-compatibility.1.2.pack.js"></script>
   <script type="text/javascript" src="http://www.ddchannel.com.br/js/coda-slider.1.1.1.pack.js"></script>
-    <script type="text/javascript">
-        $(function(){  
-                
-              $('#acervovideos').cycle({ timeout:  -600 });
-              
-              $('#acervohistorico').cycle({ timeout:  -600 });
-
-
-        });
-    </script>
-
-    <script type="text/javascript">
-    
-        var theInt = null;
-        var $crosslink, $navthumb;
-        var curclicked = 0;
-        
-        theInterval = function(cur){
-            clearInterval(theInt);
-            
-            if( typeof cur != 'undefined' )
-                curclicked = cur;
-            
-            $crosslink.removeClass("active-thumb");
-            $navthumb.eq(curclicked).parent().addClass("active-thumb");
-                $(".stripNav ul li a").eq(curclicked).trigger('click');
-            
-            theInt = setInterval(function(){
-                $crosslink.removeClass("active-thumb");
-                $navthumb.eq(curclicked).parent().addClass("active-thumb");
-                $(".stripNav ul li a").eq(curclicked).trigger('click');
-                curclicked++;
-                if( 6 == curclicked )
-                    curclicked = 0;
-                
-            }, 3000);
-        };
-        
-        $(function(){
-            
-            $("#main-photo-slider").codaSlider();
-            
-            $navthumb = $(".nav-thumb");
-            $crosslink = $(".cross-link");
-            
-            $navthumb
-            .click(function() {
-                var $this = $(this);
-                theInterval($this.parent().attr('href').slice(1) - 1);
-                return false;
-            });
-            
-            theInterval();
-        });
-    </script>
+   
+   
     </html>
     <?php
 endif;
