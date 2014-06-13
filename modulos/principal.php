@@ -392,8 +392,28 @@ $qryBanner = $db->query($strBanner);
                 }
                 ?>
             </div>
+            <?php 
+              $queryBanner = "SELECT idArquivo FROM tb_arquivo_categoria WHERE idCategoria = 55 LIMIT 1";
+              $query = $db->query($queryBanner);
+              if(isset($queryBanner) AND $query !== FALSE){
 
-            <div class="banner-rodape"> <img src="arquivos/enviados/image/bannerteste.png" /> </div>
+                $idCategoriabanner = $query[0]['idArquivo'];
+
+
+              }
+
+              if(isset($idCategoriabanner) AND $query !== FALSE){
+
+                 $queryBannerImagem = "SELECT nmNomeArquivo, nmTituloArquivo FROM tb_arquivo WHERE idArquivo = ".$idCategoriabanner." LIMIT 1";   
+                 $imageBannerImagem = $db->query($queryBannerImagem);
+                 
+                 ?>
+                  <div class="banner-rodape"> <a href="<?php echo $imageBannerImagem[0]["nmTituloArquivo"]; ?>"> <img src="arquivos/enviados/image/<?php echo $imageBannerImagem[0]["nmNomeArquivo"]; ?>" /></a> </div>
+                 <?php
+              }
+                
+            ?>
+         
         </div>
     </div>
 </div> 
