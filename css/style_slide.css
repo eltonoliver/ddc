@@ -18,4 +18,9 @@
 .photo-meta-data span 						{ font-size: 13px; }
 .cross-link									{ display: block; width: 62px; margin-top: -14px; 
 											  position: relative; padding-top: 15px; z-index: 9999; }
-.active-thumb 								{ background: transparent url(images/icon-uparrowsmallwhite.png) top center no-repeat; }
+.active-thumb 								{ background: transparent url(../images_teste/icon-uparrowsmallwhite.png) top center no-repeat;
+
+filter:alpha(opacity=65);
+  opacity:.65;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+ }

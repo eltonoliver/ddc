@@ -151,7 +151,8 @@ $qryBanner = $db->query($strBanner);
                                 echo '
                                         <div class="panel" title="Panel '.($i+2).' ">
                                             <div class="wrapper">
-                                                <img src="http://www.ddchannel.com.br/arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'" alt="temp" />
+                                              <img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=400&h=250" /> 
+                                              
                                                 <div class="photo-meta-data">
                                                     Chicago Bears at Seattle Seahawks<br />
                                                     <span>Fifth field goal, overtime win for the Seahawks</span>
@@ -178,11 +179,66 @@ $qryBanner = $db->query($strBanner);
        
         <div id="movers-row">
 
-            <div><a href="#1" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-2thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
-            <div><a href="#2" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-3thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+           <div><a href="#1" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-2thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+          <!--  <div><a href="#2" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-3thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
             <div><a href="#3" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-4thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
-            <div><a href="#4" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-5thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+            <div><a href="#4" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-5thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div> -->
           <!--  <div><a href="#6" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-6thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div> -->
+      
+           <?php
+
+                          /*SLIDESHOW PRINCIPAL */
+                          /*CASO SEJA DELETADO ESSA CATEGORIA POSSIVELMENTE IRÁ GERAR ERRO NO SLIDESHOW*/
+                          $queryIdSlidePrincipal = "SELECT idArquivo FROM tb_arquivo_categoria WHERE idCategoria = 54";
+                          $query = $db->query($queryIdSlidePrincipal);
+                          $qtd = count($query); 
+                             
+                          if($qtd > 1){
+
+                                for($i = 0 ; $i <= $qtd; $i++){
+
+                                    if(isset($query[$i]['idArquivo'])){
+                                      $completaConsulta[] = $query[$i]['idArquivo'];
+                                    }else{break;}
+                                }
+                               
+                          /*JUNTANDO POR VIRGULA*/
+                          $dados = join(',',$completaConsulta);
+                            
+                            $querySlide = "SELECT nmNomeArquivo,nmTituloArquivo,nmDescricaoArquivo FROM tb_arquivo WHERE idArquivo IN(".$dados.")";   
+                            $imagesSlide = $db->query($querySlide);
+
+
+                            
+
+                          }else{
+
+                               $querySlideImage = "SELECT nmNomeArquivo,nmTituloArquivo,nmDescricaoArquivo FROM tb_arquivo WHERE idArquivo = ".$query[0]['idArquivo']."LIMIT 3";   
+                               $imagesSlide = $db->query($querySlideImage);     
+                          } 
+
+                          $countImage = count($imagesSlide);
+                          
+                         
+                          /*FIMQUERY*/  
+
+
+                          /*LIST SLIDE*/
+
+                            for($i = 0 ; $i <= $countImage;$i++){
+                                    if(isset($imagesSlide[$i]['nmNomeArquivo'])){
+                                        echo '
+                                                <div><a href="#'.($i+2).'" class="cross-link"><img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=60&h=40" class="nav-thumb" alt="temp-thumb" /></a></div>
+                                        
+                                            ';
+                                        }else{break;}    
+                                }
+
+                          /*END LIST*/
+
+                          
+            ?>
+
         </div>
 
     </div>
