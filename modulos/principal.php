@@ -94,7 +94,7 @@ $qryBanner = $db->query($strBanner);
             
                             <h4><span class="contador-titulo"> <?php echo $qryContador[0]["nmTituloConteudo"]; ?> </span> </h4>
 
-                            <p class="contador_texto">
+                            <p>
                                 <?php echo $qryContador[0]["nmResumo"]; ?>
                                 <br />
                                 Faltam apenas:
