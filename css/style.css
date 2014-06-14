@@ -535,6 +535,9 @@ a[href="#main-menu"] span {
     padding-right: 15px;
     float: left;
   }
+
+  
+
   .contato,
   .a-pesquisas,
   .a-ad {
@@ -2719,4 +2722,10 @@ a.title-section__name:active {
   padding-top: 15px;
 }
 
+.contador{
+
+
+      height:300px;
+
+  }
 

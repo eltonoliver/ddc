@@ -69,7 +69,7 @@ $qryBanner = $db->query($strBanner);
         $str = "SELECT nmTituloAmigavel,nmLinkImagem,nmTituloConteudo FROM tb_conteudo WHERE inPublicar=1 and idTipoConteudo=26 and idConteudoRelacionado=62 order by idConteudo desc limit 1";
         $qry = $db->query($str);
         ?>
-        <a title="<?php echo $qry[0]["nmTituloConteudo"]; ?>" href="artigos/<?php echo $qry[0]["nmTituloAmigavel"]; ?>">
+       
             <?php
             if (is_file("arquivos/enviados/image/" . $qry[0]["nmLinkImagem"])) {
                 ?>
@@ -91,15 +91,15 @@ $qryBanner = $db->query($strBanner);
                 <div class="panel" title="Panel 1">
                     <div class="wrapper">
                       <div class="contador">
-            
+                            <br>    
                             <h4><span class="contador-titulo"> <?php echo $qryContador[0]["nmTituloConteudo"]; ?> </span> </h4>
-
+                             <br>
                             <p>
                                 <?php echo $qryContador[0]["nmResumo"]; ?>
                                 <br />
                                 Faltam apenas:
                             </p>
-
+                            <br>
                             <div id="countdown" class="contador_container"></div>
                         </div>
                         
@@ -147,20 +147,22 @@ $qryBanner = $db->query($strBanner);
                           /*LIST SLIDE*/
 
                             for($i = 0 ; $i <= $countImage;$i++){
-                              
-                                echo '
-                                        <div class="panel" title="Panel '.($i+2).' ">
-                                            <div class="wrapper">
-                                              <img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=400&h=250" /> 
-                                              
-                                                <div class="photo-meta-data">
-                                                    Chicago Bears at Seattle Seahawks<br />
-                                                    <span>Fifth field goal, overtime win for the Seahawks</span>
+                                    if(isset($imagesSlide[$i]['nmNomeArquivo'])){
+                                        echo '
+                                               <a href="'.$imagesSlide[$i]['nmTituloArquivo'].'"/> 
+                                                <div class="panel" title="Panel '.($i+2).' ">
+                                                    <div class="wrapper">
+                                                      <img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=400&h=250" /> 
+                                                      
+                                                        <div class="photo-meta-data">
+                                                            Chicago Bears at Seattle Seahawks<br />
+                                                            <span>Fifth field goal, overtime win for the Seahawks</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                    ';
+                                                </a>
+                                            ';
+                                          }else{break;}  
                             }
 
                           /*END LIST*/
@@ -179,7 +181,7 @@ $qryBanner = $db->query($strBanner);
        
         <div id="movers-row">
 
-           <div><a href="#1" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-2thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+           <div><a href="#1" class="cross-link"><img src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/contador.png&w=60&h=40" class="nav-thumb" alt="temp-thumb" /></a></div>
           <!--  <div><a href="#2" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-3thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
             <div><a href="#3" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-4thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
             <div><a href="#4" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-5thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div> -->
@@ -251,7 +253,7 @@ $qryBanner = $db->query($strBanner);
                 <?php
             }
             ?>
-        </a>
+        
     </div>
 
     <div class="col-charge">
