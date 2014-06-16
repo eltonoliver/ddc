@@ -407,7 +407,7 @@ $qryBanner = $db->query($strBanner);
               $qry = $db->query($str);
 
             ?>
-            <a title="<?php echo $qry[0]["nmTituloConteudo"]; ?>" href="acervo-videos">
+            <a title="<?php echo $qry[0]["nmTituloConteudo"]; ?>" href="categoria_videos">
                
                 <?php
                 if (is_file("arquivos/enviados/image/" . $qry[0]["nmLinkImagem"])) {
