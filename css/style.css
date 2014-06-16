@@ -16,9 +16,11 @@ html {
   min-height: 100%;
   line-height: 150%;
   position: relative;
+  overflow-x: hidden;
 }
 body {
   cursor: default;
+  overflow-x: hidden;
 }
 img {
   border: 0;
@@ -553,7 +555,7 @@ a[href="#main-menu"] span {
 .col-durango,
 .col-charge {
   float: left;
-  margin-bottom: 30px;
+  margin-bottom: 19px; /*COLUNA HISTORICO / VIDEOS / ARTICULISTAS*/
 }
 .col-durango,
 .col-charge,
@@ -1146,7 +1148,7 @@ a.title-section__name:active {
 }
 .i-articulistas .list-item {
   padding-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .i-articulistas .list-item__img {
   max-width: 83px;
@@ -1203,7 +1205,7 @@ a.title-section__name:active {
 .a-pesquisas,
 .a-banner a,
 .a-ad {
-  margin-bottom: 30px;
+  margin-bottom: 21px;
 }
 @media all and (max-width: 800px) {
   .aside-store {
@@ -2718,7 +2720,7 @@ a.title-section__name:active {
 
 .banner-rodape img{
 
-  width: 455px;
+  
   padding-top: 15px;
 }
 
@@ -2727,5 +2729,10 @@ a.title-section__name:active {
 
       height:300px;
 
-  }
+}
+
+.g-ytsubscribe{
+
+  float: right;
+}
 
