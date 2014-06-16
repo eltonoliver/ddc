@@ -7,7 +7,7 @@ if ($arquivoModulo == 'ddcProgramas') {
                 DDC - Programas
             </span>
 
-            <a class="title-section__more" target="_blank" href="https://www.youtube.com/user/DurangoDuarteChannel">    
+            <a class="title-section__more" target="_blank" href="https://www.youtube.com/user/DurangoDuarteChannel" style="position:absolute;margin-left:486px;">    
                 <script src="https://apis.google.com/js/platform.js"></script>
 
                 <div class="g-ytsubscribe" data-channel="DurangoDuarteChannel" data-layout="default" data-count="default"></div>
@@ -26,7 +26,7 @@ if ($arquivoModulo == 'ddcProgramas') {
                 DDC - Programas
             </span>
 
-            <a class="title-section__more" target="_blank" href="https://www.youtube.com/user/DurangoDuarteChannel">
+            <a class="title-section__more" target="_blank" href="https://www.youtube.com/user/DurangoDuarteChannel" style="position:absolute;margin-left:486px;">
                 <script src="https://apis.google.com/js/platform.js"></script>
 
                 <div class="g-ytsubscribe" data-channel="DurangoDuarteChannel" data-layout="default" data-count="default"></div>

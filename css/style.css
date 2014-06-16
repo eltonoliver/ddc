@@ -20,7 +20,8 @@ html {
 }
 body {
   cursor: default;
-  overflow-x: hidden;
+  overflow: hidden;
+  
 }
 img {
   border: 0;
@@ -2731,8 +2732,9 @@ a.title-section__name:active {
 
 }
 
-.g-ytsubscribe{
+.title-section__more div{
 
-  float: right;
+ 
 }
+
 
