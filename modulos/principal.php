@@ -181,7 +181,7 @@ $qryBanner = $db->query($strBanner);
        
         <div id="movers-row">
 
-           <div><a href="#1" class="cross-link"><img src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/contador.png&w=60&h=40" class="nav-thumb" alt="temp-thumb" /></a></div>
+           <div><a href="#1" class="cross-link"><img src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/contador.png&w=58&h=40" class="nav-thumb" alt="temp-thumb" /></a></div>
           <!--  <div><a href="#2" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-3thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
             <div><a href="#3" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-4thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
             <div><a href="#4" class="cross-link"><img src="http://www.ddchannel.com.br/images_teste/tempphoto-5thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div> -->
@@ -215,7 +215,7 @@ $qryBanner = $db->query($strBanner);
 
                           }else{
 
-                               $querySlideImage = "SELECT nmNomeArquivo,nmTituloArquivo,nmDescricaoArquivo FROM tb_arquivo WHERE idArquivo = ".$query[0]['idArquivo']."LIMIT 3";   
+                               $querySlideImage = "SELECT nmNomeArquivo,nmTituloArquivo,nmDescricaoArquivo FROM tb_arquivo WHERE idArquivo = ".$query[0]['idArquivo']."LIMIT 4";   
                                $imagesSlide = $db->query($querySlideImage);     
                           } 
 
@@ -230,7 +230,7 @@ $qryBanner = $db->query($strBanner);
                             for($i = 0 ; $i <= $countImage;$i++){
                                     if(isset($imagesSlide[$i]['nmNomeArquivo'])){
                                         echo '
-                                                <div><a href="#'.($i+2).'" class="cross-link"><img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=60&h=40" class="nav-thumb" alt="temp-thumb" /></a></div>
+                                                <div><a href="#'.($i+2).'" class="cross-link"><img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=58&h=40" class="nav-thumb" alt="temp-thumb" /></a></div>
                                         
                                             ';
                                         }else{break;}    
