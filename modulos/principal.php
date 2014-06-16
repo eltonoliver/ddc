@@ -481,7 +481,7 @@ $qryBanner = $db->query($strBanner);
                  $imageBannerImagem = $db->query($queryBannerImagem);
                  
                  ?>
-                  <div class="banner-rodape"> <a href="<?php echo $imageBannerImagem[0]["nmTituloArquivo"]; ?>"> <img src="arquivos/enviados/image/<?php echo $imageBannerImagem[0]["nmNomeArquivo"]; ?>" /></a> </div>
+                  <div class="banner-rodape"> <a href="<?php echo $imageBannerImagem[0]["nmTituloArquivo"]; ?>"> <img alt="<?php echo $artigo["nmTituloConteudo"]; ?>" src="timthumb.php?src=<?php echo $url_raiz; ?>arquivos/enviados/image/<?php echo $imageBannerImagem[0]["nmNomeArquivo"]; ?>&w=455&h=165"/></a> </div>
                  <?php
               }
                 
