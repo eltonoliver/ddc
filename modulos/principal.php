@@ -94,11 +94,12 @@ $qryBanner = $db->query($strBanner);
                             <br>    
                             <h4><span class="contador-titulo"> <?php echo $qryContador[0]["nmTituloConteudo"]; ?> </span> </h4>
                              <br>
-                            <p>
+                            <div style="text-align:center;margin-right: 120px;">
+
                                 <?php echo $qryContador[0]["nmResumo"]; ?>
                                 <br />
                                 Faltam apenas:
-                            </p>
+                            </div>
                             <br>
                             <div id="countdown" class="contador_container"></div>
                         </div>
@@ -152,11 +153,11 @@ $qryBanner = $db->query($strBanner);
                                                <a href="'.$imagesSlide[$i]['nmTituloArquivo'].'"/> 
                                                 <div class="panel" title="Panel '.($i+2).' ">
                                                     <div class="wrapper">
-                                                      <img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=400&h=250" /> 
+                                                      <img src="timthumb.php?src='.$url_raiz.'arquivos/enviados/image/'.$imagesSlide[$i]['nmNomeArquivo'].'&w=296&h=251" /> 
                                                       
                                                         <div class="photo-meta-data">
-                                                            Chicago Bears at Seattle Seahawks<br />
-                                                            <span>Fifth field goal, overtime win for the Seahawks</span>
+                                                          <br />
+                                                            <span></span>
                                                         </div>
                                                     </div>
                                                 </div>
