@@ -1206,7 +1206,7 @@ a.title-section__name:active {
 .a-pesquisas,
 .a-banner a,
 .a-ad {
-  margin-bottom: 21px;
+  margin-bottom: 20px;
 }
 @media all and (max-width: 800px) {
   .aside-store {
@@ -2736,5 +2736,7 @@ a.title-section__name:active {
 
  
 }
+
+
 
 
