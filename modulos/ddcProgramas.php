@@ -21,16 +21,19 @@ if ($arquivoModulo == 'ddcProgramas') {
 } else {
     ?>
     <div class="cf video" id="ddc_programas">
+       
         <h2 class="title-section">
+
             <span class="title-section__name">
                 DDC - Programas
             </span>
-
-            <a class="title-section__more" target="_blank" href="https://www.youtube.com/user/DurangoDuarteChannel" style="position:absolute;margin-left:486px;">
+             <a class="title-section__more" target="_blank" href="https://www.youtube.com/user/DurangoDuarteChannel" style="position:absolute;margin-left:490px;">
                 <script src="https://apis.google.com/js/platform.js"></script>
 
                 <div class="g-ytsubscribe" data-channel="DurangoDuarteChannel" data-layout="default" data-count="default"></div>
-            </a>
+             </a>
+
+           
         </h2>
 
         <div class="col">
