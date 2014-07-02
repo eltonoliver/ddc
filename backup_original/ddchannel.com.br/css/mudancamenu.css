@@ -1,0 +1,44 @@
+ul.main-menu li ul.novo-mn{
+    margin: 0 0 0 40px;
+    width: 200px;
+}
+ul.main-menu li ul.novo-mn li{
+    padding: 0;
+    width: 200px;
+    height: 45px;
+}
+ul.main-menu li ul.novo-mn li a{
+    padding: 0;
+    width: 200px;
+    height: 45px;
+}
+ul.main-menu li ul.novo-mn li a:hover{
+    padding: 0;
+    margin: 0;
+    animation: none;
+}
+
+ul.main-menu li ul{
+    display:none;
+}
+ul.main-menu li:hover ul{
+    display:block;
+}
+.msgBox{
+   margin: 0 0 0 15px;
+   width: 780px;
+   font-size: 16px;
+   //height: 25px;
+}
+
+.msgBox#msgok{
+   background-color: #dff2bf;
+   color: #629827;
+   border: 1px solid #629827;
+}
+
+.msgBox#msgerror{
+   background-color: #ffbaba;
+   color: #d6010e;
+   border: 1px solid #d6010e;
+}

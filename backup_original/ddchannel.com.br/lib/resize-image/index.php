@@ -1,0 +1,15 @@
+<?php
+
+	// *** Include the class
+	include("resize_class.php");
+
+	// *** 1) Initialise / load image
+	$resizeObj = new resize('sample.jpg');
+
+	// *** 2) Resize image (options: exact, portrait, landscape, auto, crop)
+	$resizeObj -> resizeImage(960, 450, 'crop');
+
+	// *** 3) Save image
+	$resizeObj -> saveImage('sample-resized.jpg', 100);
+
+?>

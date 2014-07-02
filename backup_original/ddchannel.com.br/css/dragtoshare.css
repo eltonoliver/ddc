@@ -1,0 +1,105 @@
+.ui-draggable {
+    cursor: move;
+}
+
+#tip {
+    background: #000;
+    background: rgba(0,0,0,.5);
+    border-radius: 4px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    display: none;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+#tip .arrow {
+    border-right: 8px solid #000;
+    border-right: 8px solid rgba(0,0,0,.5);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    height: 0;
+    line-height: 0;
+    width: 0;
+    position: absolute;
+    top: 5px;
+    left: -8px;
+}
+
+#targets {
+    display: none;
+    list-style: none;
+    position: fixed;
+    top: 50px;
+    z-index: 99999;
+}
+
+#targets li {
+    float: left;
+    position: relative;
+    width: 120px;
+}
+
+#targets li a {
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+}
+
+#targets li#twitter a {
+    background: url(../img/twitter.png) no-repeat 0 0;
+}
+
+#targets li#facebook a {
+    background: url(../img/facebook.png) no-repeat 0 0;
+}
+
+#overlay {
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99997;
+}
+
+#helper {
+    background-color: #c2c2c2;
+    border: 3px solid #7d7d7d;
+    border-radius: 8px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 70px 0 20px;
+    position: absolute;
+}
+
+#thumb {
+    height: 44px;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.share {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    width: 120px;
+    position: fixed;
+}

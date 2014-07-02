@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Newsletter do Durango</title>
+</head>
+<body>
+
+    <?php
+        $meses = array(
+            '1' => 'Janeiro',
+            '2' => 'Fevereiro',
+            '3' => 'Mar&ccedil;o',
+            '4' => 'Abril',
+            '5' => 'Maio',
+            '6' => 'Junho',
+            '7' => 'Julho',
+            '8' => 'Agosto',
+            '9' => 'Setembro',
+            '10' => 'Outubro',
+            '11' => 'Novembro',
+            '12' => 'Dezembro'
+        );
+        $d = date('d', strtotime($envio[0]['dtDataCadastro']));
+        $m = (int) date('m', strtotime($envio[0]['dtDataCadastro']));
+        $a = date('Y', strtotime($envio[0]['dtDataCadastro']));
+        $dataToda = 'Manaus, ' . $d . ' de ' . $meses[$m] . ' de ' . $a;
+    ?>
+    <table style="margin: 0 auto; padding: 0; border: 0; border-collapse: collapse; border-spacing: 0; font-family: arial, sans-serif; font-size: 14px; width: 100%; max-width: 600px;">
+        <tr border="0">
+            <th border="0" colspan="2" style="background: url(<?php echo $url_raiz; ?>img/bg-top.png) repeat;">
+                <a style="display: block; padding: 30px 0;" title="<?php echo $this->_geralConfig[0]["nmTituloSite"]; ?>" href="<?php echo $url_raiz; ?>">
+                    <img style="border: 0; display: block; width: 100%; max-width: 285px; margin: 0 auto; padding: 0;" alt="<?php echo $this->_geralConfig[0]["nmTituloSite"]; ?>" src="<?php echo $url_raiz; ?>img/<?php echo $this->_geralConfig[0]["nmLinkLogoTopo"]; ?>" />
+                </a>
+            </th>
+        </tr>
+
+        <tr style="background: #29abe2; color: #fff;" border="0">
+            <td style="padding: 15px;" border="0">
+                <b>Newsletter n&ordm;.:</b> <?php printf('%04d', $envio[0]['numeroEnvio']); ?>/<?php echo $a; ?>
+            </td>
+            <td style="text-align: right; padding: 15px;" border="0">
+                <?php echo $dataToda; ?>
+            </td>
+        </tr>
+
+        <tr border="0">
+            <td colspan="2" style="margin: 0; padding: 0 15px; color: #666; line-height: 150%; text-align: justify;">
+                <h2 style="color: #333; margin: 0 0 15px; padding: 15px 0 0; font-size: 18px;">
+                    <?php echo stripslashes($envio[0]['nmTituloConteudo']); ?>
+                </h2>
+
+                <?php echo stripslashes($envio[0]['nmConteudo']); ?>
+            </td>
+        </tr>
+
+        <tr border="0">
+            <td border="0" colspan="2" style="padding-bottom: 15px;">
+                <a style="background: #29abe2; color: #fff; font-weight: bold; text-align: center; text-decoration: none; display: block; padding: 15px;" target="_blank" href="<?php echo $url_raiz; ?>"><?php echo str_replace('http://', '', $url_raiz); ?></a>
+            </td>
+        </tr>
+
+        <tr border="0">
+            <td border="0" colspan="2" style="color: #666; font-size: 10px; line-height: 150%; text-align: center;">
+                Voc&ecirc; est&aacute; recebendo este e-mail porque est&aacute; cadastrado em nossa base de dados!<br/>
+                <a style="border-bottom: 1px dotted; color: #29abe2; text-decoration: none;" target="_blank" href="<?php echo $url_raiz; ?>retirar-email-mala/email/{codEmail}">Clique aqui</a>
+                caso n&atilde;o queira receber mais os nossos e-mails.
+                <br/>
+                E-mail cadastrado: {emailUsuario}.
+                <br/>
+                <strong>Esta &eacute; uma mensagem autom&aacute;tica, por favor n&atilde;o responda.</strong>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
